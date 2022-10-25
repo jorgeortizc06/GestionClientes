@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GestionClientes.Pages.ListClientPage">
+
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="addButton"  Text="Agregar" Clicked="ClienteButtonClicked"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid Padding="20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <ListView x:Name="listView" IsPullToRefreshEnabled="True" RowHeight="50">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell Height="50">
+                                <Grid Padding ="5">
+                                    <Image Grid.Column="0" Grid.Row="0"  Source="logo.png" WidthRequest="30" HeightRequest="30"></Image>
+                                    <Label Grid.Column="1" Grid.Row="0"  Text="{Binding Id}"/>
+                                    <Label Grid.Column="2" Grid.Row="0" Grid.ColumnSpan="2" Text="{Binding Nombre}"  />
+                                    <Label Grid.Column="3" Grid.Row="0"  Text="{Binding Apellido}"/>
+                                    <Label Grid.Column="4" Grid.Row="0"  Text="{Binding Identificacion}"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+            </Grid>
+
+
+
+
+
+        </ScrollView>
+    </ContentPage.Content>
+
+</ContentPage>
