@@ -13,6 +13,7 @@ namespace GestionClientes.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ListClientPage : ContentPage
     {
+        private List<Cliente> clientes = new List<Cliente>();
         public ListClientPage()
         {
             InitializeComponent();
@@ -27,7 +28,7 @@ namespace GestionClientes.Pages
 
         private void LoadData()
         {
-            List<Cliente> clientes = new List<Cliente>();
+           
 
             clientes.Add(
                 new Cliente() 
@@ -83,6 +84,11 @@ namespace GestionClientes.Pages
 
         {
             this.Navigation.PushAsync(new ClientePage());
+        }
+
+        private void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            listView.ItemsSource = clientes.Where(w => w.Nombre.Contains(e.NewTextValue)).ToList();
         }
 
 

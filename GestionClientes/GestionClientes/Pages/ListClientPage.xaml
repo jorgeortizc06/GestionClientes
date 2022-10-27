@@ -16,7 +16,8 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-
+                <StackLayout>
+                <SearchBar Placeholder="Buscar clientes" TextChanged="SearchBar_TextChanged"></SearchBar>
                 <ListView x:Name="listView" IsPullToRefreshEnabled="True" RowHeight="50">
                     <ListView.ItemTemplate>
                         <DataTemplate>
@@ -32,7 +33,7 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-
+                    </StackLayout>
             </Grid>
 
 
