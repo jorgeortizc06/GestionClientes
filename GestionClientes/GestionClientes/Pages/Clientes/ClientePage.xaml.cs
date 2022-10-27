@@ -31,6 +31,6 @@ namespace GestionClientes.Pages
             DisplayAlert("Cliente", ClienteViewModel.Nombre +" "+ClienteViewModel.Apellido, "Ok");
         }
 
-
+        //Ejemplo Agrego aqui codigo, de Paulina
     }
 }
